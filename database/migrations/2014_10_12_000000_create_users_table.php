@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->string('profile_picture');
-            $table->integer('points');
-            $table->boolean('visible');
+            $table->integer('points')->default(0);
+            $table->boolean('visible')->default(1);
             $table->timestamps();
         });
     }

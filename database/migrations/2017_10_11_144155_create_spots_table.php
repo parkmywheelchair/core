@@ -16,11 +16,11 @@ class CreateSpotsTable extends Migration
         Schema::create('spots', function (Blueprint $table) {
             $table->increments('id');
             $table->double('latitude');
-            $table->double('length');
+            $table->double('longitude');
             $table->integer('country_id')->unsigned()->nullable();
             $table->foreign('country_id')->references('id')->on('countries')->onUpdate('cascade')->onDelete('set null');
-            $table->integer('rank');
-            $table->boolean('visible');
+            $table->integer('rank')->default(0);
+            $table->boolean('visible')->default(1);
             $table->timestamps();
         });
     }
