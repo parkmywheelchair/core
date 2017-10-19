@@ -12,32 +12,32 @@ class SpotsTableSeeder extends Seeder
     public function run()
     {
         DB::table('spots')->insert([
-            'latitude' => 1.0,
-            'longitude' => 1.0,
+            'latitude' => 18.4665,
+            'longitude' => -97.4004,
             'country_id' => 1,
         ]);
 
         DB::table('spots')->insert([
-            'latitude' => 2.0,
-            'longitude' => 2.0,
+            'latitude' => 47.4813,
+            'longitude' => 19.0555,
             'country_id' => 2,
         ]);
 
         DB::table('spots')->insert([
-            'latitude' => 3.0,
-            'longitude' => 3.0,
+            'latitude' => 48.8566,
+            'longitude' => 2.3522,
             'country_id' => 3,
         ]);
 
         DB::table('spots')->insert([
-            'latitude' => 4.0,
-            'longitude' => 4.0,
+            'latitude' => 45.4408,
+            'longitude' => 12.3155,
             'country_id' => 4,
         ]);
 
         DB::table('spots')->insert([
-            'latitude' => 5.0,
-            'longitude' => 5.0,
+            'latitude' => 19.0183,
+            'longitude' => -98.2413,
             'country_id' => 1,
         ]);
     }

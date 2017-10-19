@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Park My Wheelchair'),
 
     /*
     |--------------------------------------------------------------------------
@@ -177,6 +177,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         * Third party Service Providers...
+         */
+        Cornford\Googlmapper\MapperServiceProvider::class
+
     ],
 
     /*
@@ -225,6 +230,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
 
     ],
 
