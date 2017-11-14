@@ -59,10 +59,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             Login via
-                                            <div class="social-buttons">
-                                                <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                                <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-                                            </div>
+                                            <a href="{{url('login/redirect')}}" class="btn btn-fb btn-block"><i class="fa fa-facebook"></i> Facebook</a>
                                             or
                                             <form class="form" method="POST" action="{{ route('login') }}" id="login-nav">
                                                 {{ csrf_field() }}

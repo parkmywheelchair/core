@@ -180,7 +180,8 @@ return [
         /**
          * Third party Service Providers...
          */
-        Cornford\Googlmapper\MapperServiceProvider::class
+        Cornford\Googlmapper\MapperServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -231,6 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 

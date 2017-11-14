@@ -11,6 +11,14 @@
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
+                        Login via
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-2">
+                                <a href="{{url('login/redirect')}}" class="btn btn-fb btn-block"><i class="fa fa-facebook"></i> Facebook</a>
+                            </div>
+                        </div>
+                        or
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
