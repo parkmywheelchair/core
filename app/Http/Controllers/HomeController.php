@@ -13,10 +13,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -25,12 +25,35 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $spots_all = Spot::all();
-        Mapper::map(47.4813, 19.0555, ['center' => true, 'marker' => false]);     
+        Mapper::map(40, -100, ['marker' => false, 'locate' => true, 'eventAfterLoad' => 'addSearchBox(map);']);
+
+        $spots_all = Spot::all();        
         foreach ($spots_all as $spot)
         {
-            Mapper::marker($spot->latitude, $spot->longitude);
+            $creator = $spot->creator[0]->name;
+            $country = $spot->country->name;
+            $directions = '<a href="https://www.google.co.uk/maps/dir/Current%20Location/' . $spot->latitude . ',' . $spot->longitude . '/?dirflg=w|location" title="Directions">Directions</a>';
+            $voteButton = '<button id="Like">Like</button>';
+            $information = "Added by: {$creator}<br>Country: {$country}<br>$directions<br>$voteButton";
+            Mapper::informationWindow($spot->latitude, $spot->longitude, $information, ['markers' => ['animation' => 'DROP']]);
         }
         return view('home');
+    }
+
+    public function welcome()
+    {
+        Mapper::map(40, -100, ['marker' => false, 'locate' => true, 'eventAfterLoad' => 'addSearchBox(map);']);
+        
+        $spots_all = Spot::all();        
+        foreach ($spots_all as $spot)
+        {
+            $creator = $spot->creator[0]->name;
+            $country = $spot->country->name;
+            $directions = '<a href="https://www.google.co.uk/maps/dir/Current%20Location/' . $spot->latitude . ',' . $spot->longitude . '/?dirflg=w|location" title="Directions">Directions</a>';
+            $voteButton = '<button id="Like">Like</button>';
+            $information = "Added by: {$creator}<br>Country: {$country}<br>$directions<br>$voteButton";
+            Mapper::informationWindow($spot->latitude, $spot->longitude, $information, ['markers' => ['animation' => 'DROP']]);
+        }
+        return view('welcome');
     }
 }

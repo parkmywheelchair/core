@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
-            $table->string('profile_picture');
+            $table->string('profile_picture')->default('');
             $table->integer('points')->default(0);
             $table->boolean('visible')->default(1);
             $table->timestamps();
